@@ -1,0 +1,88 @@
+import PortfolioClient from "./portfolio-client";
+
+const caseStudies = [
+  {
+    title: "Plateforme SaaS E-commerce",
+    category: "SaaS",
+    gradient: "from-blue-500 to-blue-600",
+    description: "Plateforme de gestion de boutiques en ligne",
+    impact: "+300%",
+    impactLabel: "Croissance utilisateurs",
+    tech: ["Next.js", "PostgreSQL", "Stripe"],
+    icon: "💼",
+  },
+  {
+    title: "Application Mobile Finance",
+    category: "Mobile",
+    gradient: "from-purple-500 to-purple-600",
+    description: "Appli bancaire digitale blockchain",
+    impact: "+50k",
+    impactLabel: "Utilisateurs en 3 mois",
+    tech: ["React Native", "Node.js", "MongoDB"],
+    icon: "📱",
+  },
+  {
+    title: "Transformation ERP",
+    category: "Enterprise",
+    gradient: "from-green-500 to-green-600",
+    description: "Migration système ERP 200 utilisateurs",
+    impact: "-35%",
+    impactLabel: "Réduction des coûts",
+    tech: ["SAP", "APIs", "Cloud"],
+    icon: "⚙️",
+  },
+  {
+    title: "Portail Smart Home",
+    category: "IoT",
+    gradient: "from-cyan-500 to-cyan-600",
+    description: "Système domotique immobilier résidentiel",
+    impact: "60+",
+    impactLabel: "Installations complètes",
+    tech: ["IoT", "Python", "React"],
+    icon: "🏠",
+  },
+  {
+    title: "Plateforme Marketplace B2B",
+    category: "SaaS",
+    gradient: "from-indigo-500 to-indigo-600",
+    description: "Marketplace de services B2B",
+    impact: "+200%",
+    impactLabel: "Transactions annuelles",
+    tech: ["Vue.js", "Django", "PostgreSQL"],
+    icon: "🛍️",
+  },
+  {
+    title: "Application Logistique",
+    category: "Enterprise",
+    gradient: "from-orange-500 to-orange-600",
+    description: "Suivi logistique en temps réel",
+    impact: "+40%",
+    impactLabel: "Efficacité opérationnelle",
+    tech: ["React", "Node.js", "Redis"],
+    icon: "📦",
+  },
+  {
+    title: "Plateforme E-learning",
+    category: "Education",
+    gradient: "from-pink-500 to-pink-600",
+    description: "Plateforme de formation digitale",
+    impact: "5000+",
+    impactLabel: "Apprenants actifs",
+    tech: ["Next.js", "Strapi", "AWS"],
+    icon: "📚",
+  },
+  {
+    title: "Dashboard Analytics",
+    category: "Data",
+    gradient: "from-teal-500 to-teal-600",
+    description: "Dashboard analytics en temps réel",
+    impact: "99.9%",
+    impactLabel: "Uptime garantie",
+    tech: ["React", "D3.js", "ClickHouse"],
+    icon: "📊",
+  },
+];
+
+export default function Portfolio() {
+  return <PortfolioClient caseStudies={caseStudies} />;
+}
