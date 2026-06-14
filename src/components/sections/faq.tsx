@@ -1,8 +1,9 @@
 "use client";
 
+import { SectionHeader, SectionShell } from "@/src/components/section-shell";
 import { Card } from "@/src/shadcn/components/ui/card";
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -26,9 +27,14 @@ const faqs = [
       "Oui, nous proposons différents niveaux de support: maintenance, mises à jour, monitoring et assistance technique. Nous pouvons discuter des options lors de notre consultation.",
   },
   {
-    question: "Travaillez-vous avec des startups?",
+    question: "Quelle est votre expertise ?",
     answer:
-      "Absolument! Nous avons une expertise particulière avec les startups. Nous proposons des tarifs flexibles et des modèles adaptés aux jeunes entreprises.",
+      "SAASTECH couvre le développement web, mobile et SaaS, ainsi que les solutions enterprise (ERP, CRM). Nous intervenons de la conception au déploiement, avec une approche transparente et des livrables définis à l'avance.",
+  },
+  {
+    question: "Travaillez-vous avec des startups ?",
+    answer:
+      "Oui, nous accompagnons startups, PME et porteurs de projet. Nous adaptons nos offres à votre budget, vos délais et vos objectifs.",
   },
   {
     question: "Comment fonctionnent vos tarifs?",
@@ -41,42 +47,36 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Questions fréquentes
-          </h2>
-          <p className="text-lg text-gray-600">
-            Trouvez les réponses à vos questions les plus courantes
-          </p>
-        </div>
+    <SectionShell containerClassName="max-w-3xl">
+      <SectionHeader
+        title="Questions fréquentes"
+        description="Trouvez les réponses à vos questions les plus courantes"
+      />
 
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <Card key={index} className="border border-gray-200">
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-gray-900 text-left">
-                  {faq.question}
-                </h3>
-                <ChevronDown
-                  className={`w-5 h-5 text-gray-600 transition-transform ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {openIndex === index && (
-                <div className="px-6 pb-4 border-t border-gray-200 pt-4">
-                  <p className="text-gray-600">{faq.answer}</p>
-                </div>
-              )}
-            </Card>
-          ))}
-        </div>
+      <div className="space-y-4 sm:space-y-5">
+        {faqs.map((faq, index) => (
+          <Card key={index} className="overflow-hidden border border-gray-200 py-0">
+            <button
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              className="flex w-full items-start justify-between gap-4 px-5 py-5 text-left transition-colors hover:bg-gray-50 sm:px-6 sm:py-6"
+            >
+              <h3 className="min-w-0 flex-1 text-base font-semibold text-gray-900 sm:text-lg">
+                {faq.question}
+              </h3>
+              <ChevronDown
+                className={`mt-0.5 h-5 w-5 shrink-0 text-gray-600 transition-transform ${
+                  openIndex === index ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {openIndex === index && (
+              <div className="border-t border-gray-200 px-5 pb-5 pt-5 sm:px-6 sm:pb-6">
+                <p className="leading-relaxed text-gray-600">{faq.answer}</p>
+              </div>
+            )}
+          </Card>
+        ))}
       </div>
-    </section>
+    </SectionShell>
   );
 }

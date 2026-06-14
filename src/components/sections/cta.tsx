@@ -1,74 +1,76 @@
+import Link from "next/link";
+import { SectionShell } from "@/src/components/section-shell";
+import { siteConfig } from "@/src/data/site";
 import { Button } from "@/src/shadcn/components/ui/button";
 import { Card } from "@/src/shadcn/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-blue-800">
-      <div className="max-w-5xl mx-auto">
-        <Card className="border-0 bg-white/10 backdrop-blur-sm">
-          <div className="p-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl font-bold text-white mb-6">
-                  Prêt à transformer votre projet?
-                </h2>
-                <p className="text-lg text-white/90 mb-8">
-                  {
-                    "Notre équipe d'experts est disponible pour discuter de votre vision et créer une stratégie digitale adaptée à vos objectifs."
-                  }
-                </p>
-                <ul className="space-y-4 mb-8">
-                  <li className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-300 flex-shrink-0" />
-                    <span className="text-white">Consultation gratuite</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-300 flex-shrink-0" />
-                    <span className="text-white">
-                      Proposition personnalisée
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-300 flex-shrink-0" />
-                    <span className="text-white">Support dédié du jour 1</span>
-                  </li>
-                </ul>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-white text-blue-600 hover:bg-white/90 rounded-lg">
-                    Planifier une consultation
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white/10 rounded-lg"
-                  >
-                    Voir nos tarifs
-                  </Button>
-                </div>
+    <SectionShell variant="gradient">
+      <Card className="border-0 bg-white/10 backdrop-blur-sm">
+        <div className="p-8 sm:p-10 md:p-12">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <div>
+              <h2 className="mb-4 text-3xl font-bold text-white sm:mb-6 sm:text-4xl">
+                Prêt à lancer votre projet digital ?
+              </h2>
+              <p className="mb-6 text-base text-white/90 sm:mb-8 sm:text-lg">
+                De la stratégie au déploiement, nous vous accompagnons avec une
+                équipe dédiée, des délais clairs et un suivi transparent.
+              </p>
+              <ul className="mb-6 space-y-3 sm:mb-8 sm:space-y-4">
+                <li className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-green-300" />
+                  <span className="text-sm text-white sm:text-base">Consultation gratuite</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-green-300" />
+                  <span className="text-sm text-white sm:text-base">Devis transparent</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <CheckCircle2 className="h-5 w-5 shrink-0 text-green-300" />
+                  <span className="text-sm text-white sm:text-base">
+                    Suivi direct avec l&apos;équipe
+                  </span>
+                </li>
+              </ul>
+              <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                <Button
+                  asChild
+                  className="h-12 w-full rounded-lg bg-white text-blue-600 hover:bg-white/90 sm:w-auto"
+                >
+                  <Link href="/contact">Planifier une consultation</Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-12 w-full rounded-lg border-white text-white hover:bg-white/10 sm:w-auto"
+                >
+                  <Link href="/services">Voir nos services</Link>
+                </Button>
               </div>
-              <div className="hidden md:flex justify-center">
-                <div className="bg-white/20 rounded-2xl p-8 text-center">
-                  <div className="mb-4">
-                    <span className="text-5xl font-bold text-white">500+</span>
-                  </div>
-                  <p className="text-white mb-6 font-semibold">
-                    Projets réussis en Europe et Afrique
-                  </p>
-                  <hr className="border-white/30 my-6" />
-                  <div className="space-y-3">
-                    <div>
-                      <p className="text-2xl font-bold text-white">98%</p>
-                      <p className="text-white/80 text-sm">
-                        Taux de satisfaction client
-                      </p>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="w-full max-w-xs rounded-2xl bg-white/20 p-6 text-center sm:p-8">
+                <p className="mb-4 text-sm font-medium text-white/90 sm:text-base">
+                  {siteConfig.valueProposition}
+                </p>
+                <hr className="my-4 border-white/30 sm:my-6" />
+                <div className="grid grid-cols-3 gap-2">
+                  {siteConfig.highlights.map((item) => (
+                    <div key={item.label}>
+                      <p className="text-lg font-bold text-white sm:text-xl">{item.value}</p>
+                      <p className="text-[10px] text-white/70 sm:text-xs">{item.label}</p>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
-        </Card>
-      </div>
-    </section>
+        </div>
+      </Card>
+    </SectionShell>
   );
 }

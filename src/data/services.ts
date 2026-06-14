@@ -24,7 +24,7 @@ export const services: Service[] = [
     slug: "developpement-web",
     title: "Développement Web",
     shortDescription:
-      "Sites web modernes et responsive construits avec les dernières technologies.",
+      "Création de sites web personnalisés, rapides et sécurisés, adaptés aux besoins spécifiques de chaque entreprise.",
     overview:
       "Nous concevons et développons des sites vitrines, landing pages et applications web sur mesure. Performance, accessibilité et SEO sont intégrés dès la conception pour garantir une expérience fluide sur tous les appareils.",
     icon: Code2,
@@ -51,7 +51,7 @@ export const services: Service[] = [
     slug: "applications-mobiles",
     title: "Applications Mobiles",
     shortDescription:
-      "Applications iOS et Android performantes et intuitives.",
+      "Applications iOS et Android performantes et intuitives, conçues pour offrir une expérience fluide à vos utilisateurs.",
     overview:
       "De la validation du concept au déploiement sur les stores, nous livrons des applications natives ou cross-platform alignées sur vos parcours utilisateurs et vos contraintes métier.",
     icon: Smartphone,
@@ -78,7 +78,7 @@ export const services: Service[] = [
     slug: "solutions-saas",
     title: "Solutions SaaS",
     shortDescription:
-      "Plateformes en ligne scalables et faciles à utiliser pour votre business.",
+      "Plateformes en ligne scalables et faciles à utiliser, pensées pour faire grandir votre activité.",
     overview:
       "Nous construisons des produits SaaS multi-tenant avec authentification, facturation, tableaux de bord et API — pensés pour évoluer avec votre base utilisateurs sans refonte coûteuse.",
     icon: Settings,
@@ -105,7 +105,7 @@ export const services: Service[] = [
     slug: "solutions-enterprise",
     title: "Solutions Enterprise",
     shortDescription:
-      "Systèmes ERP et CRM propriétaires adaptés à votre entreprise.",
+      "Systèmes ERP et CRM sur mesure, intégrés à vos processus métier et à votre écosystème existant.",
     overview:
       "Quand les solutions du marché ne couvrent pas vos processus, nous développons des ERP, CRM et outils métiers sur mesure — intégrés à votre SI existant.",
     icon: Zap,
@@ -132,7 +132,7 @@ export const services: Service[] = [
     slug: "formation-it",
     title: "Formation IT",
     shortDescription:
-      "Formations spécialisées et e-learning pour monter en compétences.",
+      "Formations spécialisées et parcours e-learning pour monter en compétences vos équipes techniques.",
     overview:
       "Nous proposons des parcours sur mesure pour vos équipes : développement web, cloud, sécurité, product management — en présentiel, distanciel ou via plateforme e-learning.",
     icon: BookOpen,

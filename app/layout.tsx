@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/src/components/smooth-scroll";
+import { siteConfig } from "@/src/data/site";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -10,9 +11,31 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SAASTECH",
-  description:
-    "SAASTECH is a software development company specializing in building custom web applications and providing software solutions to businesses of all sizes.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -22,10 +45,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${poppins.variable} h-full antialiased scroll-smooth`}
+      lang="fr"
+      className={`${poppins.variable} h-full antialiased scroll-smooth overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
         <SmoothScroll />
         {children}
       </body>

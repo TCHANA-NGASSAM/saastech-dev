@@ -3,12 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import MarketingShell from "@/src/components/marketing-shell";
 import PageHero from "@/src/components/page-hero";
+import { SectionShell } from "@/src/components/section-shell";
 import CTA from "@/src/components/sections/cta";
 import {
   getOtherServices,
   getServiceBySlug,
   services,
 } from "@/src/data/services";
+import { siteConfig } from "@/src/data/site";
 import { Button } from "@/src/shadcn/components/ui/button";
 import {
   Card,
@@ -54,21 +56,23 @@ export default async function ServiceDetailPage({ params }: PageProps) {
     <MarketingShell>
       <PageHero title={service.title} description={service.shortDescription} />
 
-      <section className="border-b border-gray-200 bg-gray-50 px-6 py-14">
-        <div className="mx-auto flex max-w-5xl flex-col items-start gap-6 md:flex-row md:items-center">
+      <SectionShell variant="muted" size="compact" containerClassName="max-w-5xl">
+        <div className="flex flex-col items-start gap-4 sm:gap-6 md:flex-row md:items-center">
           <div
-            className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-linear-to-br ${service.gradient}`}
+            className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br sm:h-16 sm:w-16 ${service.gradient}`}
           >
-            <Icon className="h-8 w-8 text-white" aria-hidden />
+            <Icon className="h-7 w-7 text-white sm:h-8 sm:w-8" aria-hidden />
           </div>
-          <p className="text-lg leading-relaxed text-gray-700">{service.overview}</p>
+          <p className="text-base leading-relaxed text-gray-700 sm:text-lg">
+            {service.overview}
+          </p>
         </div>
-      </section>
+      </SectionShell>
 
-      <section className="px-6 py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-3">
+      <SectionShell size="compact">
+        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:grid-cols-3">
           <div>
-            <h2 className="mb-6 text-2xl font-bold text-gray-900">
+            <h2 className="mb-4 text-xl font-bold text-gray-900 sm:mb-6 sm:text-2xl">
               Ce que nous apportons
             </h2>
             <ul className="space-y-4">
@@ -85,7 +89,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
 
           <div>
-            <h2 className="mb-6 text-2xl font-bold text-gray-900">Livrables</h2>
+            <h2 className="mb-4 text-xl font-bold text-gray-900 sm:mb-6 sm:text-2xl">Livrables</h2>
             <ul className="space-y-4">
               {service.deliverables.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -100,7 +104,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
 
           <div>
-            <h2 className="mb-6 text-2xl font-bold text-gray-900">
+            <h2 className="mb-4 text-xl font-bold text-gray-900 sm:mb-6 sm:text-2xl">
               Cas d&apos;usage
             </h2>
             <ul className="space-y-4">
@@ -117,32 +121,31 @@ export default async function ServiceDetailPage({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="mx-auto mt-16 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-gray-200 pt-10 sm:flex-row">
-          <Button variant="outline" className="rounded-full" asChild>
+        <div className="mt-10 flex flex-col gap-3 border-t border-gray-200 pt-8 sm:mt-12 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:pt-10">
+          <Button variant="outline" className="h-12 w-full rounded-full sm:w-auto" asChild>
             <Link href="/services">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Tous les services
             </Link>
           </Button>
           <Button
-            className="rounded-full bg-linear-to-r from-blue-500 to-blue-600 px-8 hover:from-blue-600 hover:to-blue-700"
+            className="h-12 w-full rounded-full bg-linear-to-r from-blue-500 to-blue-600 px-8 hover:from-blue-600 hover:to-blue-700 sm:w-auto"
             asChild
           >
             <a
-              href={`mailto:contact@saastech.com?subject=${encodeURIComponent(`Demande : ${service.title}`)}`}
+              href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(`Demande : ${service.title}`)}`}
             >
               Demander un devis
             </a>
           </Button>
         </div>
-      </section>
+      </SectionShell>
 
-      <section className="border-t border-gray-200 bg-gray-50 px-6 py-20">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="mb-10 text-center text-3xl font-bold text-gray-900">
-            Autres services
-          </h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <SectionShell variant="muted" divider>
+        <h2 className="mb-8 text-center text-2xl font-bold text-gray-900 sm:mb-10 sm:text-3xl">
+          Autres services
+        </h2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {otherServices.map((item) => {
               const OtherIcon = item.icon;
               return (
@@ -174,8 +177,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               );
             })}
           </div>
-        </div>
-      </section>
+      </SectionShell>
 
       <CTA />
     </MarketingShell>

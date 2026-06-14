@@ -1,34 +1,37 @@
 "use client";
 
+import {
+  MARKETING_CARD,
+  MARKETING_CARD_CONTENT,
+  SECTION_GRID,
+  SectionHeader,
+  SectionShell,
+} from "@/src/components/section-shell";
 import { Card, CardContent } from "@/src/shadcn/components/ui/card";
-import { Star } from "lucide-react";
+import { Handshake, Rocket, Shield, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const testimonials = [
+const commitments = [
   {
-    name: "Jean Dupont",
-    company: "TechStart Paris",
-    text: "SAASTECH a transformé notre présence digitale. Leurs solutions sont innovantes et véritablement adaptées à nos besoins.",
-    rating: 5,
+    icon: Handshake,
+    title: "Transparence totale",
+    text: "Devis clair, délais réalistes et communication directe à chaque étape du projet.",
   },
   {
-    name: "Marie Laurent",
-    company: "Agence Marketing Pro",
-    text: "L'équipe est professionnelle et réactive. Notre site web a généré 40% de leads en plus en 3 mois.",
-    rating: 5,
+    icon: Rocket,
+    title: "Accompagnement personnalisé",
+    text: "Un interlocuteur dédié, des solutions adaptées à votre contexte et une écoute attentive.",
   },
   {
-    name: "Pierre Moreau",
-    company: "E-commerce Solutions",
-    text: "Un vrai partenaire pour la croissance. Les résultats parlent d'eux-mêmes. Hautement recommandé!",
-    rating: 5,
+    icon: Zap,
+    title: "Réactivité",
+    text: "Réponse sous 48h ouvrées, consultation gratuite et devis clair avant tout engagement.",
   },
   {
-    name: "Sophie Bernard",
-    company: "Startup Innovation",
-    text: "Excellent travail sur la conception UX/UI. L'équipe comprend vraiment notre vision et la met en œuvre parfaitement.",
-    rating: 5,
+    icon: Shield,
+    title: "Engagement qualité",
+    text: "Méthode structurée, livrables définis à l'avance et communication régulière tout au long du projet.",
   },
 ];
 
@@ -42,86 +45,50 @@ export default function Testimonials() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-      },
+      transition: { staggerChildren: 0.12 },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -40 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-      },
+      y: 0,
+      transition: { duration: 0.5 },
     },
   };
 
   return (
-    <section className="py-20 px-6 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Retours de nos clients
-          </h2>
-          <p className="text-lg text-gray-600">
-            Découvrez ce que nos partenaires pensent de nos solutions
-          </p>
-        </motion.div>
+    <SectionShell variant="muted">
+      <SectionHeader
+        title="Notre engagement"
+        description="Voici ce que vous pouvez attendre de nous à chaque étape de votre projet."
+      />
 
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {testimonials.map((testimonial, index) => (
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={containerVariants}
+        className={`${SECTION_GRID} sm:grid-cols-2 lg:grid-cols-4`}
+      >
+        {commitments.map((item, index) => {
+          const Icon = item.icon;
+          return (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="border border-gray-200 hover:shadow-lg transition-all hover:border-blue-400">
-                <CardContent className="pt-6">
-                  <motion.div
-                    className="flex gap-1 mb-4"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 + 0.3 }}
-                    viewport={{ once: true }}
-                  >
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <motion.div
-                        key={i}
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                  <p className="text-gray-700 mb-4 line-clamp-3">
-                    {testimonial.text}
-                  </p>
-                  <div>
-                    <p className="font-semibold text-gray-900">
-                      {testimonial.name}
-                    </p>
-                    <p className="text-sm text-gray-600">
-                      {testimonial.company}
-                    </p>
+              <Card className={`h-full transition-all hover:border-blue-400 hover:shadow-lg ${MARKETING_CARD}`}>
+                <CardContent className={`${MARKETING_CARD_CONTENT} pt-6`}>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+                    <Icon className="h-6 w-6 text-blue-600" />
                   </div>
+                  <h3 className="mb-3 font-semibold text-gray-900">{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-600">{item.text}</p>
                 </CardContent>
               </Card>
             </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+          );
+        })}
+      </motion.div>
+    </SectionShell>
   );
 }

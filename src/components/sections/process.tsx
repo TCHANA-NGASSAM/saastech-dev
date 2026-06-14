@@ -1,5 +1,8 @@
-import { Card, CardContent, CardHeader } from "@/src/shadcn/components/ui/card";
-import { Lightbulb, Pencil, Code2, Rocket } from "lucide-react";
+import { SectionHeader, SectionShell } from "@/src/components/section-shell";
+import { Card, CardContent } from "@/src/shadcn/components/ui/card";
+import { cn } from "@/src/shadcn/lib/utils";
+import { Code2, Lightbulb, Pencil, Rocket } from "lucide-react";
+import { Fragment } from "react";
 
 const steps = [
   {
@@ -28,51 +31,86 @@ const steps = [
   },
 ];
 
-export default function Process() {
+/** Hauteurs partagées carte / connecteur pour aligner le trait dégradé */
+const PROCESS_ICON_BLOCK = "h-14 shrink-0";
+const PROCESS_TITLE_ROW = "flex min-h-10 shrink-0 items-center";
+
+function ProcessConnector() {
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Notre Processus
-          </h2>
-          <p className="text-lg text-gray-600">
-            Une approche structurée et éprouvée pour garantir le succès de votre
-            projet
-          </p>
+    <div className="hidden shrink-0 flex-col lg:flex lg:w-8 xl:w-10" aria-hidden>
+      <div className={PROCESS_ICON_BLOCK} />
+      <div className={cn(PROCESS_TITLE_ROW, "px-0.5")}>
+        <div className="h-px w-full rounded-full bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
+      </div>
+    </div>
+  );
+}
+
+function ProcessStepCard({
+  step,
+  index,
+  className,
+}: {
+  step: (typeof steps)[number];
+  index: number;
+  className?: string;
+}) {
+  const Icon = step.icon;
+
+  return (
+    <Card
+      className={cn(
+        "h-full gap-0 overflow-hidden rounded-2xl border border-gray-200/70 bg-white py-0 shadow-none ring-0",
+        className,
+      )}
+    >
+      <CardContent className="flex h-full flex-col p-6 lg:p-7">
+        <div className={cn(PROCESS_ICON_BLOCK, "mb-0 flex items-start")}>
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-100/80">
+            <Icon className="h-5 w-5 text-blue-600" strokeWidth={1.75} aria-hidden />
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
-            return (
-              <div key={index} className="relative">
-                <Card className="border border-gray-200 h-full hover:border-blue-500 hover:shadow-lg transition-all">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-4xl font-bold text-blue-600 opacity-20">
-                        {index + 1}
-                      </span>
-                      <h3 className="text-xl font-semibold text-gray-900">
-                        {step.title}
-                      </h3>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">{step.description}</p>
-                  </CardContent>
-                </Card>
-                {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 right-0 w-6 h-0.5 bg-linear-to-r from-blue-400 to-transparent transform translate-x-6" />
-                )}
-              </div>
-            );
-          })}
+        <div className={cn(PROCESS_TITLE_ROW, "mb-4 gap-2.5")}>
+          <span
+            className="shrink-0 text-[2.5rem] leading-none font-bold text-blue-500/25 lg:text-[2.75rem]"
+            aria-hidden
+          >
+            {index + 1}
+          </span>
+          <h3 className="text-base leading-snug font-bold text-gray-900 lg:text-[1.05rem]">
+            {step.title}
+          </h3>
         </div>
+
+        <p className="text-sm leading-relaxed text-gray-600">{step.description}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+export default function Process() {
+  return (
+    <SectionShell divider>
+      <SectionHeader
+        title="Notre Processus"
+        description="Une approche structurée et éprouvée pour garantir le succès de votre projet"
+      />
+
+      <div className="hidden lg:flex lg:items-stretch">
+        {steps.map((step, index) => (
+          <Fragment key={step.title}>
+            {index > 0 ? <ProcessConnector /> : null}
+            <ProcessStepCard step={step} index={index} className="min-w-0 flex-1" />
+          </Fragment>
+        ))}
       </div>
-    </section>
+
+      <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:hidden">
+        {steps.map((step, index) => (
+          <ProcessStepCard key={step.title} step={step} index={index} />
+        ))}
+      </div>
+    </SectionShell>
   );
 }

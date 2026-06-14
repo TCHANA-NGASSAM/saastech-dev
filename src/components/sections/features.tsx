@@ -1,7 +1,15 @@
 "use client";
 
+import {
+  MARKETING_CARD,
+  MARKETING_CARD_CONTENT,
+  MARKETING_CARD_HEADER,
+  SECTION_GRID,
+  SectionHeader,
+  SectionShell,
+} from "@/src/components/section-shell";
 import { Card, CardContent, CardHeader } from "@/src/shadcn/components/ui/card";
-import { Zap, Layers, Palette, TrendingUp, Users, Cpu } from "lucide-react";
+import { Cpu, Layers, Palette, TrendingUp, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -54,9 +62,7 @@ export default function Features() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -65,63 +71,43 @@ export default function Features() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-      },
+      transition: { duration: 0.6 },
     },
   };
 
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Ce qui nous rend différents
-          </h2>
-          <p className="text-lg text-gray-600">
-            Découvrez pourquoi les entreprises nous font confiance pour
-            transformer leur vision digitale
-          </p>
-        </motion.div>
+    <SectionShell divider>
+      <SectionHeader
+        title="Ce qui nous rend différents"
+        description="Découvrez pourquoi les entreprises nous font confiance pour transformer leur vision digitale"
+      />
 
-        <motion.div
-          ref={ref}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div key={index} variants={itemVariants}>
-                <Card className="border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all">
-                  <CardHeader className="pb-3">
-                    <motion.div
-                      className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                    >
-                      <Icon className="w-6 h-6 text-blue-600" />
-                    </motion.div>
-                    <h3 className="text-xl font-semibold text-gray-900">
-                      {feature.title}
-                    </h3>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-      </div>
-    </section>
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        variants={containerVariants}
+        className={`${SECTION_GRID} md:grid-cols-2 lg:grid-cols-3`}
+      >
+        {features.map((feature, index) => {
+          const Icon = feature.icon;
+          return (
+            <motion.div key={index} variants={itemVariants}>
+              <Card className={`h-full transition-all hover:border-blue-400 hover:shadow-lg ${MARKETING_CARD}`}>
+                <CardHeader className={MARKETING_CARD_HEADER}>
+                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+                    <Icon className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
+                </CardHeader>
+                <CardContent className={MARKETING_CARD_CONTENT}>
+                  <p className="leading-relaxed text-gray-600">{feature.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </SectionShell>
   );
 }
