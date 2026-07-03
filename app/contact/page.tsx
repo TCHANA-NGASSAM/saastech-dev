@@ -210,7 +210,9 @@ export default function ContactPage() {
                         <p className="text-sm font-semibold text-gray-900 mb-1">
                           Adresse
                         </p>
-                        <p className="text-sm text-gray-600">En attente ....</p>
+                        <p className="text-sm text-gray-600">
+                          123 Rue de l'Innovation 75001 Paris, France
+                        </p>
                       </div>
                     </li>
 
@@ -226,7 +228,7 @@ export default function ContactPage() {
                           href="mailto:info@saastech.com"
                           className="text-sm text-gray-600 hover:text-blue-700 transition-colors"
                         >
-                          En attente ....
+                          contact@saastech.com
                         </a>
                       </div>
                     </li>
@@ -243,7 +245,7 @@ export default function ContactPage() {
                           href="tel:+237656480640"
                           className="text-sm text-gray-600 hover:text-blue-700 transition-colors"
                         >
-                          En attente ....
+                          +33 1 23 45 67 89
                         </a>
                       </div>
                     </li>
@@ -268,7 +270,7 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
