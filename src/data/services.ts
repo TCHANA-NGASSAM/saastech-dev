@@ -2,6 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import {
   BookOpen,
   Code2,
+  Megaphone,
   Settings,
   Smartphone,
   Zap,
@@ -50,8 +51,7 @@ export const services: Service[] = [
   {
     slug: "applications-mobiles",
     title: "Applications Mobiles",
-    shortDescription:
-      "Applications iOS et Android performantes et intuitives.",
+    shortDescription: "Applications iOS et Android performantes et intuitives.",
     overview:
       "De la validation du concept au déploiement sur les stores, nous livrons des applications natives ou cross-platform alignées sur vos parcours utilisateurs et vos contraintes métier.",
     icon: Smartphone,
@@ -126,6 +126,44 @@ export const services: Service[] = [
       "Remplacement d'outils Excel critiques",
       "CRM verticalisé pour un secteur spécifique",
       "Orchestration de processus inter-services",
+    ],
+  },
+  {
+    slug: "marketing-digital",
+    title: "Marketing Digital",
+    shortDescription:
+      "Stratégies et exécution de campagnes digitales pour booster votre visibilité.",
+    overview:
+      "Nous concevons et mettons en œuvre des stratégies de marketing digital sur mesure : SEO, SEA, social media, email marketing et création de contenu pour atteindre vos objectifs de croissance.",
+
+    icon: Megaphone,
+    gradient: "from-blue-700 to-indigo-900",
+
+    features: [
+      "Stratégie digitale personnalisée adaptée à vos objectifs",
+      "Gestion et optimisation des campagnes publicitaires (Google Ads & Meta Ads)",
+      "Optimisation SEO pour améliorer votre visibilité sur les moteurs de recherche",
+      "Création de contenus engageants pour les réseaux sociaux et le web",
+      "Suivi des performances avec des tableaux de bord et indicateurs clés",
+      "Optimisation continue basée sur l'analyse des résultats",
+    ],
+
+    deliverables: [
+      "Audit complet de votre présence digitale",
+      "Plan de stratégie marketing avec calendrier éditorial",
+      "Campagnes publicitaires configurées et optimisées",
+      "Création de visuels et contenus adaptés à vos canaux",
+      "Rapports de performance détaillés avec recommandations",
+      "Plan d'amélioration continue pour maximiser le retour sur investissement",
+    ],
+
+    useCases: [
+      "Lancement d'un nouveau produit ou service",
+      "Augmentation de la visibilité et de la notoriété d'une marque",
+      "Génération de leads qualifiés et acquisition de nouveaux clients",
+      "Développement de la présence sur les réseaux sociaux",
+      "Amélioration du trafic et des conversions d'un site web",
+      "Fidélisation des clients grâce à des campagnes d'email marketing",
     ],
   },
   {

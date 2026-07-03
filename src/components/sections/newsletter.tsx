@@ -27,7 +27,7 @@ export default function Newsletter() {
             </h2>
             <p className="text-lg text-white/90 mb-8">
               Inscrivez-vous à notre newsletter pour recevoir nos derniers
-              conseils en digitalisatio et nos cas de succès.
+              conseils en digitalisation et nos cas de succès.
             </p>
 
             <form

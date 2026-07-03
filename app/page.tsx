@@ -44,11 +44,13 @@ export default function Home() {
             </div>
 
             {/* Title */}
-            <h1 className="text-7xl md:text-8xl font-black tracking-tight leading-tight mb-6">
-              <span className="text-white">Transformez votre</span>
+            <h1 className="text-6xl md:text-7xl font-black tracking-tight leading-tight mb-6">
+              <span className="text-white">
+                Votre partenaire technologique
+              </span>
               <br />
               <span className="bg-linear-to-r from-blue-400 via-blue-300 to-cyan-400 text-transparent bg-clip-text">
-                présence digitale
+                de long terme.
               </span>
             </h1>
 
@@ -112,7 +114,6 @@ export default function Home() {
 
       {/* PRICING SECTION */}
       <Pricing />
-
 
       {/* NEWSLETTER SECTION */}
       <Newsletter />

@@ -1,85 +1,78 @@
 import PortfolioClient from "./portfolio-client";
 
-const caseStudies = [
+type projecType = {
+  title: string;
+  category: string;
+  description: string;
+  price: string;
+  company: string;
+  badge: string;
+};
+
+const caseStudies : projecType[] = [
   {
     title: "Plateforme SaaS E-commerce",
     category: "SaaS",
-    gradient: "from-blue-500 to-blue-600",
     description: "Plateforme de gestion de boutiques en ligne",
-    impact: "+300%",
-    impactLabel: "Croissance utilisateurs",
-    tech: ["Next.js", "PostgreSQL", "Stripe"],
-    icon: "💼",
+    price: "$120/hr",
+    company: "Shopify",
+    badge: "Senior SaaS Engineer",
   },
   {
     title: "Application Mobile Finance",
     category: "Mobile",
-    gradient: "from-purple-500 to-purple-600",
     description: "Appli bancaire digitale blockchain",
-    impact: "+50k",
-    impactLabel: "Utilisateurs en 3 mois",
-    tech: ["React Native", "Node.js", "MongoDB"],
-    icon: "📱",
+    price: "$140/hr",
+    company: "Revolut",
+    badge: "Mobile Product Lead",
   },
   {
     title: "Transformation ERP",
     category: "Enterprise",
-    gradient: "from-green-500 to-green-600",
     description: "Migration système ERP 200 utilisateurs",
-    impact: "-35%",
-    impactLabel: "Réduction des coûts",
-    tech: ["SAP", "APIs", "Cloud"],
-    icon: "⚙️",
+    price: "$130/hr",
+    company: "SAP",
+    badge: "ERP Solutions Architect",
   },
   {
     title: "Portail Smart Home",
     category: "IoT",
-    gradient: "from-cyan-500 to-cyan-600",
     description: "Système domotique immobilier résidentiel",
-    impact: "60+",
-    impactLabel: "Installations complètes",
-    tech: ["IoT", "Python", "React"],
-    icon: "🏠",
+    price: "$110/hr",
+    company: "Nest",
+    badge: "IoT Product Designer",
   },
   {
     title: "Plateforme Marketplace B2B",
     category: "SaaS",
-    gradient: "from-indigo-500 to-indigo-600",
     description: "Marketplace de services B2B",
-    impact: "+200%",
-    impactLabel: "Transactions annuelles",
-    tech: ["Vue.js", "Django", "PostgreSQL"],
-    icon: "🛍️",
+    price: "$135/hr",
+    company: "Alibaba",
+    badge: "Marketplace Strategist",
   },
   {
     title: "Application Logistique",
     category: "Enterprise",
-    gradient: "from-orange-500 to-orange-600",
     description: "Suivi logistique en temps réel",
-    impact: "+40%",
-    impactLabel: "Efficacité opérationnelle",
-    tech: ["React", "Node.js", "Redis"],
-    icon: "📦",
+    price: "$125/hr",
+    company: "DHL",
+    badge: "Logistics Engineer",
   },
   {
     title: "Plateforme E-learning",
     category: "Education",
-    gradient: "from-pink-500 to-pink-600",
     description: "Plateforme de formation digitale",
-    impact: "5000+",
-    impactLabel: "Apprenants actifs",
-    tech: ["Next.js", "Strapi", "AWS"],
-    icon: "📚",
+    price: "$115/hr",
+    company: "Coursera",
+    badge: "Learning Experience Lead",
   },
   {
     title: "Dashboard Analytics",
     category: "Data",
-    gradient: "from-teal-500 to-teal-600",
     description: "Dashboard analytics en temps réel",
-    impact: "99.9%",
-    impactLabel: "Uptime garantie",
-    tech: ["React", "D3.js", "ClickHouse"],
-    icon: "📊",
+    price: "$150/hr",
+    company: "Google",
+    badge: "Senior Backend Engineer",
   },
 ];
 

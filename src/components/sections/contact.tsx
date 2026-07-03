@@ -6,20 +6,22 @@ import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import { useMemo, useState } from "react";
 
 type ContactSubject =
-  | "Application Windows"
-  | "Développement Web & Mobile"
-  | "API & Industriel"
-  | "Stage Étudiant"
-  | "Autre";
+  | "Développement Web"
+  | "Applications Mobiles"
+  | "Solutions SaaS"
+  | "Solutions Enterprise"
+  | "Marketing Digital"
+  | "Formation IT";
 
 export default function Contact() {
   const subjects = useMemo<ContactSubject[]>(
     () => [
-      "Application Windows",
-      "Développement Web & Mobile",
-      "API & Industriel",
-      "Stage Étudiant",
-      "Autre",
+      "Développement Web",
+      "Applications Mobiles",
+      "Solutions SaaS",
+      "Solutions Enterprise",
+      "Marketing Digital",
+      "Formation IT",
     ],
     [],
   );
