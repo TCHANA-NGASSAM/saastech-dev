@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Comment démarrer avec SAASTECH?",
+    question: "Comment démarrer avec SAASTEK?",
     answer:
       "Nous proposons une consultation initiale gratuite pour comprendre vos besoins. Contactez-nous et nous mettrons en place un projet adapté à votre budget et vos objectifs.",
   },

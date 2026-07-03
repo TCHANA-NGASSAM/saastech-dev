@@ -30,11 +30,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const service = getServiceBySlug(slug);
 
   if (!service) {
-    return { title: "Service introuvable | SAASTECH" };
+    return { title: "Service introuvable | SAASTEK" };
   }
 
   return {
-    title: `${service.title} | SAASTECH`,
+    title: `${service.title} | SAASTEK`,
     description: service.shortDescription,
   };
 }

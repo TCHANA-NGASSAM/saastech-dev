@@ -10,9 +10,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "SAASTECH",
+  title: "SAASTEK",
   description:
-    "SAASTECH is a software development company specializing in building custom web applications and providing software solutions to businesses of all sizes.",
+    "SAASTEK is a software development company specializing in building custom web applications and providing software solutions to businesses of all sizes.",
 };
 
 export default function RootLayout({

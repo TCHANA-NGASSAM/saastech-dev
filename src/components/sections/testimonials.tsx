@@ -9,7 +9,7 @@ const testimonials = [
   {
     name: "Jean Dupont",
     company: "TechStart Paris",
-    text: "SAASTECH a transformé notre présence digitale. Leurs solutions sont innovantes et véritablement adaptées à nos besoins.",
+    text: "SAASTEK a transformé notre présence digitale. Leurs solutions sont innovantes et véritablement adaptées à nos besoins.",
     rating: 5,
   },
   {
