@@ -50,7 +50,7 @@ export default function ServicesPage() {
                   className="flex flex-col border border-gray-200 transition hover:border-blue-500/40 hover:shadow-lg"
                 >
                   <CardHeader>
-                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-600">
+                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-linear-to-br from-blue-500 to-blue-600">
                       <Icon className="h-7 w-7 text-white" aria-hidden />
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900">

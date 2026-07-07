@@ -478,13 +478,13 @@ export default function About() {
                       <p className="text-gray-600 text-sm mb-4">
                         {exp.shortDescription}
                       </p>
-                      <div className="pt-4 border-t border-gray-200">
+                      {/* <div className="pt-4 border-t border-gray-200">
                         <p className="text-sm text-blue-600 font-semibold">
                           {exp.deliverables.length} projets réalisés
                         </p>
                         <p className="text-sm text-gray-500">
                         </p>
-                      </div>
+                      </div> */}
                     </CardContent>
                   </Card>
                 </motion.div>

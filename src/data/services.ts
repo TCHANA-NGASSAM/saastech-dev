@@ -167,8 +167,8 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "formation-it",
-    title: "Formation IT",
+    slug: "academie-saastech",
+    title: "Académie SAASTECH",
     shortDescription:
       "Formations spécialisées et e-learning pour monter en compétences.",
     overview:
