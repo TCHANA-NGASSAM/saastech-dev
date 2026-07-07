@@ -211,7 +211,7 @@ export default function ContactPage() {
                           Adresse
                         </p>
                         <p className="text-sm text-gray-600">
-                          123 Rue de l'Innovation 75001 Paris, France
+                          123 Rue de l&apos;Innovation 75001 Paris, France
                         </p>
                       </div>
                     </li>

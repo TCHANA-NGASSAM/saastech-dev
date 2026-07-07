@@ -15,7 +15,7 @@ function Navbar() {
       <Card className="w-2/3 h-15 rounded-4xl flex flex-row items-center justify-between p-0 px-4 bg-white/90 backdrop-blur-sm shadow-lg">
         <CardHeader className="p-0">
           <Link href="/" className="font-bold text-xl">
-            SAASTEK
+            SAASTECH
           </Link>
         </CardHeader>
         <CardContent className="flex items-center justify-between flex-row gap-5 p-0">
@@ -23,7 +23,7 @@ function Navbar() {
           <Link href={"/services"}>Services</Link>
           <Link href={"#portfolio"}>Portfolio</Link>
           <Link href={"/projet"}>Projets</Link>
-          <Link href={"#"}>À propos</Link>
+          <Link href={"/about"}>À propos</Link>
         </CardContent>
         <CardFooter className="p-0 bg-transparent">
           <Button

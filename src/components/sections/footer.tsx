@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">SAASTEK</h3>
+            <h3 className="text-2xl font-bold mb-4">SAASTECH</h3>
             <p className="text-gray-400 mb-6">
               {
                 " L'architecte de votre transformation digitale en Europe et en Afrique."
@@ -145,7 +145,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2026 SAASTEK. Tous les droits réservés.
+              © 2026 SAASTECH. Tous les droits réservés.
             </p>
             <div className="flex gap-6">
               <Link

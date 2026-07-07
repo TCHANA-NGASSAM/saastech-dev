@@ -15,7 +15,7 @@ import {
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services | SAASTEK",
+  title: "Services | SAASTECH",
   description:
     "Développement web, applications mobiles, SaaS, solutions enterprise et formation IT pour votre transformation digitale.",
 };
