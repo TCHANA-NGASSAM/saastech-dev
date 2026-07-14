@@ -1,6 +1,13 @@
 "use client";
 
 import { Card } from "@/src/shadcn/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/src/shadcn/components/ui/carousel";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -52,7 +59,40 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="md:hidden">
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {faqs.map((faq, index) => (
+                <CarouselItem key={index} className="basis-full">
+                  <Card className="border border-gray-200">
+                    <button
+                      onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                      className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    >
+                      <h3 className="text-lg font-semibold text-gray-900 text-left">
+                        {faq.question}
+                      </h3>
+                      <ChevronDown
+                        className={`w-5 h-5 text-gray-600 transition-transform ${
+                          openIndex === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {openIndex === index && (
+                      <div className="px-6 pb-4 border-t border-gray-200 pt-4">
+                        <p className="text-gray-600">{faq.answer}</p>
+                      </div>
+                    )}
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+            <CarouselNext className="right-0 translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+          </Carousel>
+        </div>
+
+        <div className="hidden md:block space-y-4">
           {faqs.map((faq, index) => (
             <Card key={index} className="border border-gray-200">
               <button

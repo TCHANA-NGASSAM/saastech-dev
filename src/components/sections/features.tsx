@@ -1,6 +1,13 @@
 "use client";
 
 import { Card, CardContent, CardHeader } from "@/src/shadcn/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/src/shadcn/components/ui/carousel";
 import { Zap, Layers, Palette, TrendingUp, Users, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -90,12 +97,46 @@ export default function Features() {
           </p>
         </motion.div>
 
+        <div className="md:hidden">
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <CarouselItem key={index} className="basis-full">
+                    <motion.div variants={itemVariants}>
+                      <Card className="border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all">
+                        <CardHeader className="pb-3">
+                          <motion.div
+                            className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4"
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                          >
+                            <Icon className="w-6 h-6 text-blue-600" />
+                          </motion.div>
+                          <h3 className="text-xl font-semibold text-gray-900">
+                            {feature.title}
+                          </h3>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-gray-600">{feature.description}</p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+            <CarouselNext className="right-0 translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+          </Carousel>
+        </div>
+
         <motion.div
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {features.map((feature, index) => {
             const Icon = feature.icon;

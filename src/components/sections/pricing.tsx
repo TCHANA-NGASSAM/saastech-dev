@@ -70,9 +70,10 @@ export default function Pricing() {
             <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
             <span className="text-blue-300 text-sm font-semibold">Prennez rendez-vous</span>
           </span>
-          <h2 className="text-5xl font-bold text-white mb-6 leading-tight">
-            Démarrons votre transformation<br />
-            <span className="bg-linear-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="mb-6 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+            Démarrons votre transformation
+            <br />
+            <span className="bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               avec une consultation stratégique
             </span>
           </h2>

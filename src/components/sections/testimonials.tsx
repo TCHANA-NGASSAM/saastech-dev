@@ -1,6 +1,13 @@
 "use client";
 
 import { Card, CardContent } from "@/src/shadcn/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/src/shadcn/components/ui/carousel";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -77,12 +84,59 @@ export default function Testimonials() {
           </p>
         </motion.div>
 
+        <div className="md:hidden">
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index} className="basis-full">
+                  <motion.div variants={itemVariants}>
+                    <Card className="border border-gray-200 hover:shadow-lg transition-all hover:border-blue-400 h-full">
+                      <CardContent className="pt-6">
+                        <motion.div
+                          className="flex gap-1 mb-4"
+                          initial={{ opacity: 0 }}
+                          whileInView={{ opacity: 1 }}
+                          transition={{ delay: index * 0.1 + 0.3 }}
+                          viewport={{ once: true }}
+                        >
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              whileHover={{ scale: 1.2 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            </motion.div>
+                          ))}
+                        </motion.div>
+                        <p className="text-gray-700 mb-4 line-clamp-3">
+                          {testimonial.text}
+                        </p>
+                        <div>
+                          <p className="font-semibold text-gray-900">
+                            {testimonial.name}
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            {testimonial.company}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+            <CarouselNext className="right-0 translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+          </Carousel>
+        </div>
+
         <motion.div
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {testimonials.map((testimonial, index) => (
             <motion.div key={index} variants={itemVariants}>

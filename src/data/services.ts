@@ -129,41 +129,36 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "marketing-digital",
-    title: "Marketing Digital",
+    slug: "automatisation-ia",
+    title: "Automatisation IA",
     shortDescription:
-      "Stratégies et exécution de campagnes digitales pour booster votre visibilité.",
+      "Automatisez vos processus métier avec des solutions IA intelligentes et fiables.",
     overview:
-      "Nous concevons et mettons en œuvre des stratégies de marketing digital sur mesure : SEO, SEA, social media, email marketing et création de contenu pour atteindre vos objectifs de croissance.",
+      "Nous concevons des workflows d'automatisation pilotés par l'IA pour réduire les tâches répétitives, améliorer la productivité et accélérer votre prise de décision.",
 
     icon: Megaphone,
-    gradient: "from-blue-700 to-indigo-900",
+    gradient: "from-purple-600 to-indigo-800",
 
     features: [
-      "Stratégie digitale personnalisée adaptée à vos objectifs",
-      "Gestion et optimisation des campagnes publicitaires (Google Ads & Meta Ads)",
-      "Optimisation SEO pour améliorer votre visibilité sur les moteurs de recherche",
-      "Création de contenus engageants pour les réseaux sociaux et le web",
-      "Suivi des performances avec des tableaux de bord et indicateurs clés",
-      "Optimisation continue basée sur l'analyse des résultats",
+      "Identification des processus automatisables et optimisation du flux de travail",
+      "Intégration de chatbots et assistants IA dans vos opérations",
+      "Automatisation de la collecte, du tri et de l'analyse des données",
+      "Déploiement de solutions IA adaptées à vos outils métiers",
+      "Monitoring des performances et amélioration continue",
     ],
 
     deliverables: [
-      "Audit complet de votre présence digitale",
-      "Plan de stratégie marketing avec calendrier éditorial",
-      "Campagnes publicitaires configurées et optimisées",
-      "Création de visuels et contenus adaptés à vos canaux",
-      "Rapports de performance détaillés avec recommandations",
-      "Plan d'amélioration continue pour maximiser le retour sur investissement",
+      "Audit des processus et cartographie des automatisations",
+      "Workflows automatisés configurés et intégrés",
+      "Assistants IA ou bots opérationnels",
+      "Documentation de mise en œuvre et plan de maintenance",
     ],
 
     useCases: [
-      "Lancement d'un nouveau produit ou service",
-      "Augmentation de la visibilité et de la notoriété d'une marque",
-      "Génération de leads qualifiés et acquisition de nouveaux clients",
-      "Développement de la présence sur les réseaux sociaux",
-      "Amélioration du trafic et des conversions d'un site web",
-      "Fidélisation des clients grâce à des campagnes d'email marketing",
+      "Automatisation du support client et des réponses fréquentes",
+      "Rationalisation des tâches administratives et de suivi",
+      "Analyse automatisée de données et génération de rapports",
+      "Assistance à la prise de décision grâce à l'IA",
     ],
   },
   {

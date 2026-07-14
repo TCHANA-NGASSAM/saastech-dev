@@ -2,6 +2,13 @@
 
 import { Button } from "@/src/shadcn/components/ui/button";
 import { Card, CardContent } from "@/src/shadcn/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/src/shadcn/components/ui/carousel";
 import { ArrowUpRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -81,16 +88,32 @@ export default function PortfolioClient({
           </p>
         </motion.div>
 
+        <div className="md:hidden mb-12">
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {caseStudies.map((project, index) => (
+                <CarouselItem key={index} className="basis-full">
+                  <motion.div variants={itemVariants}>
+                    <ProjetCard project={project} />
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+            <CarouselNext className="right-0 translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+          </Carousel>
+        </div>
+
         {/* Projects Grid */}
         <motion.div
           ref={ref}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
         >
           {caseStudies.map((project, index) => (
-             <ProjetCard key={index} project={project}  />
+            <ProjetCard key={index} project={project} />
           ))}
         </motion.div>
 

@@ -13,7 +13,7 @@ type ContactSubject =
   | "Applications Mobiles"
   | "Solutions SaaS"
   | "Solutions Enterprise"
-  | "Marketing Digital"
+  | "Automatisation IA"
   | "Formation IT";
 
 export default function ContactPage() {
@@ -23,7 +23,7 @@ export default function ContactPage() {
       "Applications Mobiles",
       "Solutions SaaS",
       "Solutions Enterprise",
-      "Marketing Digital",
+      "Automatisation IA",
       "Formation IT",
     ],
     [],

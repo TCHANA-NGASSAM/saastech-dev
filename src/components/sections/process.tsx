@@ -1,4 +1,13 @@
+"use client";
+
 import { Card, CardContent, CardHeader } from "@/src/shadcn/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/src/shadcn/components/ui/carousel";
 import { Lightbulb, Pencil, Code2, Rocket } from "lucide-react";
 
 const steps = [
@@ -42,7 +51,41 @@ export default function Process() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="md:hidden">
+          <Carousel opts={{ loop: true }} className="w-full">
+            <CarouselContent>
+              {steps.map((step, index) => {
+                const Icon = step.icon;
+                return (
+                  <CarouselItem key={index} className="basis-full">
+                    <Card className="border border-gray-200 h-full hover:border-blue-500 hover:shadow-lg transition-all">
+                      <CardHeader>
+                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                          <Icon className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="text-4xl font-bold text-blue-600 opacity-20">
+                            {index + 1}
+                          </span>
+                          <h3 className="text-xl font-semibold text-gray-900">
+                            {step.title}
+                          </h3>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="text-gray-600">{step.description}</p>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 -translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+            <CarouselNext className="right-0 translate-x-1/2 border border-gray-200 bg-white/90 shadow-sm hover:bg-white" />
+          </Carousel>
+        </div>
+
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
