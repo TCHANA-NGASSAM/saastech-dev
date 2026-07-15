@@ -14,7 +14,8 @@ type ContactSubject =
   | "Solutions SaaS"
   | "Solutions Enterprise"
   | "Automatisation IA"
-  | "Formation IT";
+  | "Formation IT"
+  | "Autres";
 
 export default function ContactPage() {
   const subjects = useMemo<ContactSubject[]>(
@@ -25,6 +26,7 @@ export default function ContactPage() {
       "Solutions Enterprise",
       "Automatisation IA",
       "Formation IT",
+      "Autres",
     ],
     [],
   );

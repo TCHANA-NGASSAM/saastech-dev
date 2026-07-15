@@ -32,6 +32,7 @@ import {
   Star,
 } from "lucide-react";
 import { services } from "@/src/data/services";
+import Link from "next/link";
 
 export default function About() {
   const { ref: statsRef, inView: statsInView } = useInView({
@@ -361,7 +362,11 @@ export default function About() {
             className="lg:hidden space-y-6"
           >
             {timeline.map((event, idx) => (
-              <motion.div key={idx} variants={itemVariants} className="flex gap-4">
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                className="flex gap-4"
+              >
                 {/* Timeline Marker */}
                 <div className="flex flex-col items-center shrink-0">
                   <div className="w-5 h-5 bg-blue-600 rounded-full ring-3 ring-blue-100" />
@@ -584,8 +589,11 @@ export default function About() {
                 ))}
               </div>
 
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-3 text-lg">
-                Découvrez nos services
+              <Button
+                asChild
+                className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-3 text-lg"
+              >
+                <Link href="/services">Découvrez nos services</Link>
               </Button>
             </motion.div>
 
@@ -739,35 +747,43 @@ export default function About() {
                   {
                     name: "Ted Brockinski",
                     role: "Lead Designer",
-                    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+                    image:
+                      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
                   },
                   {
                     name: "Jessie Roberts",
                     role: "Lead Developer",
-                    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop",
+                    image:
+                      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop",
                   },
                   {
                     name: "Billie Peaker",
                     role: "Project Manager",
-                    image: "https://images.unsplash.com/photo-1517849845537-1d51a20414de?w=300&h=300&fit=crop",
+                    image:
+                      "https://images.unsplash.com/photo-1517849845537-1d51a20414de?w=300&h=300&fit=crop",
                   },
                   {
                     name: "Alex Johnson",
                     role: "Lead Strategist",
-                    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop",
+                    image:
+                      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop",
                   },
                   {
                     name: "Sarah Williams",
                     role: "UX Specialist",
-                    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop",
+                    image:
+                      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop",
                   },
                 ].map((member, idx) => (
-                  <CarouselItem key={idx} className="basis-full md:basis-1/2 lg:basis-1/3 flex justify-center">
+                  <CarouselItem
+                    key={idx}
+                    className="basis-full md:basis-1/2 lg:basis-1/3 flex justify-center"
+                  >
                     <div className="text-center group">
                       <div className="relative mb-6 inline-block">
                         <div className="w-40 h-40 rounded-full overflow-hidden bg-gray-200 border-4 border-gray-100 group-hover:border-blue-400 transition-all shadow-lg">
-                          <img 
-                            src={member.image} 
+                          <img
+                            src={member.image}
                             alt={member.name}
                             className="w-full h-full object-cover"
                           />
@@ -833,14 +849,18 @@ export default function About() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-3 text-lg font-semibold">
-                Démarrer un projet
+              <Button
+                asChild
+                className="bg-white text-blue-600 hover:bg-gray-100 rounded-full px-8 py-3 text-lg font-semibold"
+              >
+                <Link href="/contact">Démarrer un projet</Link>
               </Button>
               <Button
+                asChild
                 variant="outline"
                 className="border-white text-white hover:bg-white/10 rounded-full px-8 py-3 text-lg font-semibold"
               >
-                Prendre un rendez-vous
+                <Link href="/contact">Prendre un rendez-vous</Link>
               </Button>
             </div>
           </motion.div>

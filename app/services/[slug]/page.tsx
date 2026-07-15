@@ -128,11 +128,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             className="rounded-full bg-linear-to-r from-blue-500 to-blue-600 px-8 hover:from-blue-600 hover:to-blue-700"
             asChild
           >
-            <a
-              href={`mailto:contact@saastech.com?subject=${encodeURIComponent(`Demande : ${service.title}`)}`}
-            >
+            <Link href="/contact">
               Demander un devis
-            </a>
+            </Link>
           </Button>
         </div>
       </section>

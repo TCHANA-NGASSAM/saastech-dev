@@ -3,6 +3,7 @@ import { Button } from "@/src/shadcn/components/ui/button";
 import { Check, Zap, Target, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 const consultationDetails = [
   {
@@ -68,7 +69,9 @@ export default function Pricing() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/50 mb-6">
             <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
-            <span className="text-blue-300 text-sm font-semibold">Prennez rendez-vous</span>
+            <span className="text-blue-300 text-sm font-semibold">
+              Prennez rendez-vous
+            </span>
           </span>
           <h2 className="mb-6 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
             Démarrons votre transformation
@@ -78,7 +81,8 @@ export default function Pricing() {
             </span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Discutez directement avec nos experts pour définir la meilleure stratégie pour votre projet
+            Discutez directement avec nos experts pour définir la meilleure
+            stratégie pour votre projet
           </p>
         </motion.div>
 
@@ -95,11 +99,18 @@ export default function Pricing() {
               Ce que vous obtenez
             </h3>
             <p className="text-gray-300 mb-8 leading-relaxed">
-              {"Notre équipe d'experts analysera votre situation pour proposer une solution adaptée à votre contexte, vos ressources et vos ambitions."}
+              {
+                "Notre équipe d'experts analysera votre situation pour proposer une solution adaptée à votre contexte, vos ressources et vos ambitions."
+              }
             </p>
-            
+
             <ul className="space-y-4 mb-10">
-              {["Diagnostic complet de votre projet", "Stratégie personnalisée", "Estimation réaliste", "Support transparent"].map((item, idx) => (
+              {[
+                "Diagnostic complet de votre projet",
+                "Stratégie personnalisée",
+                "Estimation réaliste",
+                "Support transparent",
+              ].map((item, idx) => (
                 <motion.li
                   key={idx}
                   className="flex items-center gap-3"
@@ -111,12 +122,12 @@ export default function Pricing() {
               ))}
             </ul>
 
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Button className="bg-linear-to-r from-blue-500 to-blue-600 text-white rounded-lg h-14 px-10 text-lg font-semibold hover:shadow-xl hover:shadow-blue-500/30 transition-all w-full">
-                Prendre rendez-vous
+            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <Button
+                asChild
+                className="bg-linear-to-r from-blue-500 to-blue-600 text-white rounded-lg h-14 px-10 text-lg font-semibold hover:shadow-xl hover:shadow-blue-500/30 transition-all w-full"
+              >
+                <Link href="/contact">Prendre rendez-vous</Link>
               </Button>
             </motion.div>
 
@@ -171,7 +182,8 @@ export default function Pricing() {
           className="bg-linear-to-r from-blue-600/10 via-cyan-600/10 to-blue-600/10 rounded-lg border border-blue-500/20 p-8 text-center"
         >
           <p className="text-gray-300 mb-4">
-            Rejoignez les <span className="text-white font-semibold">500+</span> entreprises qui font confiance à nos experts
+            Rejoignez les <span className="text-white font-semibold">500+</span>{" "}
+            entreprises qui font confiance à nos experts
           </p>
           <div className="flex justify-center gap-8 flex-wrap">
             <div>

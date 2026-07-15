@@ -11,6 +11,7 @@ import Footer from "@/src/components/sections/footer";
 import { Button } from "@/src/shadcn/components/ui/button";
 import { Card } from "@/src/shadcn/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -60,29 +61,45 @@ export default function Home() {
             {/* Stats */}
             <div className="mx-auto mb-8 mt-8 flex max-w-2xl flex-row gap-3 sm:mt-12 sm:flex-row sm:gap-4">
               <div className="flex-1 rounded-2xl border border-white/10 bg-white/5 p-3 text-center backdrop-blur-sm sm:p-4">
-                <p className="mb-1 text-2xl font-bold text-blue-400 sm:text-3xl">500+</p>
-                <p className="text-xs text-gray-400 sm:text-sm">Projets réussis</p>
+                <p className="mb-1 text-2xl font-bold text-blue-400 sm:text-3xl">
+                  500+
+                </p>
+                <p className="text-xs text-gray-400 sm:text-sm">
+                  Projets réussis
+                </p>
               </div>
               <div className="flex-1 rounded-2xl border border-white/10 bg-white/5 p-3 text-center backdrop-blur-sm sm:p-4">
-                <p className="mb-1 text-2xl font-bold text-blue-400 sm:text-3xl">98%</p>
-                <p className="text-xs text-gray-400 sm:text-sm">Satisfaction clients</p>
+                <p className="mb-1 text-2xl font-bold text-blue-400 sm:text-3xl">
+                  98%
+                </p>
+                <p className="text-xs text-gray-400 sm:text-sm">
+                  Satisfaction clients
+                </p>
               </div>
               <div className="flex-1 rounded-2xl border border-white/10 bg-white/5 p-3 text-center backdrop-blur-sm sm:p-4">
-                <p className="mb-1 text-2xl font-bold text-blue-400 sm:text-3xl">50+</p>
-                <p className="text-xs text-gray-400 sm:text-sm">Experts disponibles</p>
+                <p className="mb-1 text-2xl font-bold text-blue-400 sm:text-3xl">
+                  50+
+                </p>
+                <p className="text-xs text-gray-400 sm:text-sm">
+                  Experts disponibles
+                </p>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button className="h-12 rounded-full bg-linear-to-r from-blue-500 to-blue-600 px-8 text-lg font-semibold text-white transition-all hover:shadow-xl hover:shadow-blue-500/50">
-                Démarrer gratuitement
+              <Button
+                asChild
+                className="h-12 rounded-full bg-linear-to-r from-blue-500 to-blue-600 px-8 text-lg font-semibold text-white transition-all hover:shadow-xl hover:shadow-blue-500/50"
+              >
+                <Link href="/contact">Démarrer gratuitement</Link>
               </Button>
               <Button
+                asChild
                 variant="outline"
                 className="h-12 rounded-full border-blue-400/50 px-8 text-lg font-semibold text-white hover:bg-blue-500/10"
               >
-                En savoir plus
+                <Link href="/about">En savoir plus</Link>
               </Button>
             </div>
           </div>

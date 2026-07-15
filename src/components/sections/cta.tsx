@@ -1,6 +1,7 @@
 import { Button } from "@/src/shadcn/components/ui/button";
 import { Card } from "@/src/shadcn/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 export default function CTA() {
   return (
@@ -36,13 +37,7 @@ export default function CTA() {
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button className="bg-white text-blue-600 hover:bg-white/90 rounded-lg">
-                    Planifier une consultation
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white/10 rounded-lg"
-                  >
-                    Voir nos tarifs
+                    <Link href="/contact">Planifier une consultation</Link>
                   </Button>
                 </div>
               </div>
