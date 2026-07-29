@@ -37,8 +37,7 @@ export default function Home() {
         <div className="relative z-20 flex min-h-[90vh] items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
           <div className="w-full max-w-4xl text-center">
             {/* Badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-400/50 bg-blue-500/20 px-4 py-2 sm:mb-8">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-blue-400" />
+            <div className=" hidden mb-6 xl:inline-flex items-center gap-2 rounded-full border border-blue-400/50 bg-blue-500/20 px-4 py-2 sm:mb-8">
               <span className="text-sm font-semibold text-blue-300">
                 Experts en transformation digitale
               </span>
@@ -62,7 +61,7 @@ export default function Home() {
             <div className="mx-auto mb-8 mt-8 flex max-w-2xl flex-row gap-3 sm:mt-12 sm:flex-row sm:gap-4">
               <div className="flex-1 rounded-2xl border border-white/10 bg-white/5 p-3 text-center backdrop-blur-sm sm:p-4">
                 <p className="mb-1 text-2xl font-bold text-blue-400 sm:text-3xl">
-                  500+
+                  43+
                 </p>
                 <p className="text-xs text-gray-400 sm:text-sm">
                   Projets réussis
@@ -97,7 +96,7 @@ export default function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="h-12 rounded-full border-blue-400/50 px-8 text-lg font-semibold text-white hover:bg-blue-500/10"
+                className="h-12 rounded-full border-blue-400/50 bg-white/50 px-8 text-lg font-semibold text-white hover:bg-blue-500/10"
               >
                 <Link href="/about">En savoir plus</Link>
               </Button>

@@ -5,9 +5,6 @@ import PageHero from "@/src/components/page-hero";
 import ProjetCard from "@/src/components/projetCard";
 import CTA from "@/src/components/sections/cta";
 import Footer from "@/src/components/sections/footer";
-import { Button } from "@/src/shadcn/components/ui/button";
-import { Card, CardContent } from "@/src/shadcn/components/ui/card";
-import { ArrowUpRight, Bookmark } from "lucide-react";
 
 type projecType = {
   title: string;

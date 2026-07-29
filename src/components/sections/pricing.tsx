@@ -68,7 +68,6 @@ export default function Pricing() {
           className="text-center mb-20"
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-400/50 mb-6">
-            <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
             <span className="text-blue-300 text-sm font-semibold">
               Prennez rendez-vous
             </span>
@@ -182,7 +181,7 @@ export default function Pricing() {
           className="bg-linear-to-r from-blue-600/10 via-cyan-600/10 to-blue-600/10 rounded-lg border border-blue-500/20 p-8 text-center"
         >
           <p className="text-gray-300 mb-4">
-            Rejoignez les <span className="text-white font-semibold">500+</span>{" "}
+            Rejoignez les <span className="text-white font-semibold">43+</span>{" "}
             entreprises qui font confiance à nos experts
           </p>
           <div className="flex justify-center gap-8 flex-wrap">

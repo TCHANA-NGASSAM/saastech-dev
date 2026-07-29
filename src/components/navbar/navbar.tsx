@@ -10,6 +10,7 @@ import {
   CardFooter,
   CardHeader,
 } from "@/src/shadcn/components/ui/card";
+import Image from "next/image";
 
 const links = [
   { href: "/", label: "Accueil" },
@@ -41,13 +42,16 @@ function Navbar() {
     <div className="fixed top-0 left-0 z-50 flex w-full justify-center px-4 pt-4">
       <Card className="w-full max-w-5xl rounded-[2rem] border border-black/5 bg-white/90 p-0 shadow-lg backdrop-blur-sm">
         <div className="flex items-center justify-between px-4 py-3 md:px-6">
-          <CardHeader className="p-0">
-            <Link href="/" className="text-xl font-bold" onClick={closeMenu}>
+          <CardHeader className="p-0 md:w-full md:flex h-full gap-2 items-center">
+            <div className="bg-blue-400 h-8 w-8 rounded-lg overflow-hidden">
+              <Image height={32} width={32} src={"/images/logo.png"} alt="logo"/>
+            </div>
+            <Link href="/" className="text-xl font-bold hidden lg:flex" onClick={closeMenu}>
               SAASTECH
             </Link>
           </CardHeader>
 
-          <CardContent className="hidden items-center justify-between gap-5 p-0 md:flex">
+          <CardContent className="hidden items-center justify-between gap-5 p-0 px-2 md:flex md:w-full">
             {links.map((link) => {
               const active = isActiveLink(link.href);
 
@@ -56,7 +60,7 @@ function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={closeMenu}
-                  className={`transition-colors ${
+                  className={`transition-colors md:w-17 lg:w-full ${
                     active ? "font-semibold text-blue-500" : "text-black/70 hover:text-black"
                   }`}
                 >
@@ -66,7 +70,7 @@ function Navbar() {
             })}
           </CardContent>
 
-          <CardFooter className="hidden bg-transparent p-0 md:flex">
+          <CardFooter className="hidden bg-transparent p-0 md:flex md:w-full justify-end">
             <Button
               asChild
               variant="default"

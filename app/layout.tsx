@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/src/components/smooth-scroll";
+import { Toaster } from "@/src/shadcn/components/ui/sonner";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans">
         <SmoothScroll />
         {children}
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );

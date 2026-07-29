@@ -20,19 +20,14 @@ import {
   Lightbulb,
   Rocket,
   Check,
-  Globe,
-  Brain,
   Heart,
-  Code,
-  Palette,
   Briefcase,
-  TrendingUp,
-  Shield,
   Clock,
   Star,
 } from "lucide-react";
 import { services } from "@/src/data/services";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   const { ref: statsRef, inView: statsInView } = useInView({
@@ -86,40 +81,40 @@ export default function About() {
     "Équipe passionnée et innovante",
     "Solutions scalables et durables",
     "Support client réactif 24/7",
-    "Portfolio de 500+ projets réussis",
+    "Portfolio de 43+ projets réussis",
     "Partenaires des plus grandes marques",
   ];
 
   const timeline = [
     {
-      year: "2009",
+      year: "2017",
       title: "Fondation",
       description:
         "SAASTECH née de la passion pour la technologie et l'innovation digitale.",
     },
     {
-      year: "2012",
+      year: "2019",
       title: "Première Expansion",
       description:
         "Ouverture du bureau en Afrique pour servir le marché en croissance.",
     },
     {
-      year: "2016",
-      title: "500+ Projets",
+      year: "2020",
+      title: "38+ Projets",
       description:
-        "Passage du cap des 500 projets réussis, reconnaissance du marché.",
+        "Passage du cap des 30 projets réussis, reconnaissance du marché.",
     },
     {
-      year: "2020",
+      year: "2024",
       title: "Transformation",
       description:
         "Adaptation à la transformation digitale post-COVID, solutions innovantes.",
     },
     {
-      year: "2024",
+      year: "2026",
       title: "Bilan Actuel",
       description:
-        "50+ experts, 1000+ clients satisfaits, 15 ans d'excellence.",
+        "50+ experts, 60+ clients satisfaits, 9 ans d'excellence.",
     },
   ];
 
@@ -258,10 +253,10 @@ export default function About() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
           >
             {[
-              { number: "500+", label: "Projets réussis", icon: Briefcase },
+              { number: "43+", label: "Projets réussis", icon: Briefcase },
               { number: "50+", label: "Experts talentueux", icon: Users },
               { number: "98%", label: "Satisfaction clients", icon: Star },
-              { number: "15+", label: "Années d'expérience", icon: Clock },
+              { number: "9+", label: "Années d'expérience", icon: Clock },
             ].map((stat, idx) => {
               const Icon = stat.icon;
               return (
@@ -622,13 +617,13 @@ export default function About() {
                   icon: Lightbulb,
                   title: "Créativité",
                   desc: "Solutions innovantes",
-                  stat: "500+",
+                  stat: "43+",
                 },
                 {
                   icon: Zap,
                   title: "Performance",
                   desc: "Ultra-optimisé",
-                  stat: "99.9%",
+                  stat: "99.8%",
                 },
               ].map((item, idx) => {
                 const Icon = item.icon;
@@ -713,9 +708,9 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section ref={teamRef} className="py-20 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
+      {/* <section ref={teamRef} className="py-20 px-6 bg-white"> */}
+        {/* <div className="max-w-7xl mx-auto"> */}
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -728,9 +723,9 @@ export default function About() {
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               50+ experts passionnés répartis en Europe et en Afrique
             </p>
-          </motion.div>
+          </motion.div> */}
 
-          <motion.div
+          {/* <motion.div
             initial="hidden"
             animate={teamInView ? "visible" : "hidden"}
             variants={containerVariants}
@@ -782,10 +777,12 @@ export default function About() {
                     <div className="text-center group">
                       <div className="relative mb-6 inline-block">
                         <div className="w-40 h-40 rounded-full overflow-hidden bg-gray-200 border-4 border-gray-100 group-hover:border-blue-400 transition-all shadow-lg">
-                          <img
-                            src={member.image}
+                          <Image
+                            src={""}
                             alt={member.name}
                             className="w-full h-full object-cover"
+                            width={160}
+                            height={160}
                           />
                         </div>
                       </div>
@@ -802,10 +799,10 @@ export default function About() {
               <CarouselPrevious className="left-0 md:left-4 bg-white hover:bg-gray-100 text-gray-900" />
               <CarouselNext className="right-0 md:right-4 bg-white hover:bg-gray-100 text-gray-900" />
             </Carousel>
-          </motion.div>
+          </motion.div> */}
 
           {/* Additional Team Stats */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -827,9 +824,9 @@ export default function About() {
                 </CardContent>
               </Card>
             ))}
-          </motion.div>
-        </div>
-      </section>
+          </motion.div> */}
+        {/* </div> */}
+      {/* </section> */}
 
       {/* CTA Section */}
       <section className="py-20 px-6 bg-linear-to-br from-blue-600 to-blue-800">
@@ -844,7 +841,7 @@ export default function About() {
               Prêt à transformer votre entreprise ?
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Rejoignez les 500+ entreprises qui nous font confiance pour leur
+              Rejoignez les 43+ entreprises qui nous font confiance pour leur
               transformation digitale. Contactez-nous pour un audit gratuit.
             </p>
 

@@ -2,10 +2,10 @@ import type { LucideIcon } from "lucide-react";
 import {
   BookOpen,
   Code2,
-  Megaphone,
   Settings,
   Smartphone,
   Zap,
+  Brain
 } from "lucide-react";
 
 export type Service = {
@@ -136,7 +136,7 @@ export const services: Service[] = [
     overview:
       "Nous concevons des workflows d'automatisation pilotés par l'IA pour réduire les tâches répétitives, améliorer la productivité et accélérer votre prise de décision.",
 
-    icon: Megaphone,
+    icon: Brain,
     gradient: "from-purple-600 to-indigo-800",
 
     features: [

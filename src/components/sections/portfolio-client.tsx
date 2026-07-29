@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/src/shadcn/components/ui/button";
-import { Card, CardContent } from "@/src/shadcn/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -9,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/src/shadcn/components/ui/carousel";
-import { ArrowUpRight, Zap } from "lucide-react";
+import { Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";

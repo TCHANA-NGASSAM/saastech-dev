@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-blue-800">
+    <section className="py-20 px-6 bg-linear-to-r from-blue-600 to-blue-800">
       <div className="max-w-5xl mx-auto">
         <Card className="border-0 bg-white/10 backdrop-blur-sm">
           <div className="p-12">
@@ -21,17 +21,17 @@ export default function CTA() {
                 </p>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-300 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-green-300 shrink-0" />
                     <span className="text-white">Consultation gratuite</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-300 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-green-300 shrink-0" />
                     <span className="text-white">
                       Proposition personnalisée
                     </span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-green-300 flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-green-300 shrink-0" />
                     <span className="text-white">Support dédié du jour 1</span>
                   </li>
                 </ul>
@@ -44,7 +44,7 @@ export default function CTA() {
               <div className="hidden md:flex justify-center">
                 <div className="bg-white/20 rounded-2xl p-8 text-center">
                   <div className="mb-4">
-                    <span className="text-5xl font-bold text-white">500+</span>
+                    <span className="text-5xl font-bold text-white">43+</span>
                   </div>
                   <p className="text-white mb-6 font-semibold">
                     Projets réussis en Europe et Afrique
